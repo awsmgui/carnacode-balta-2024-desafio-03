@@ -1,0 +1,77 @@
+﻿@page "/"
+@using System.ComponentModel.DataAnnotations
+
+<PageTitle>Calcule seu IMC</PageTitle>
+
+      <div class="container">
+        <div>
+          <div class="header">
+            <h1>Cálculo de IMC</h1>
+          </div>
+          <EditForm Model="@Model" OnValidSubmit=CalcImc>
+            <DataAnnotationsValidator/>
+            <ValidationSummary />
+            <div class="input">
+              <input class="input-decoration text-decoration" type="text" @bind="Model.Height" placeholder="Altura"/>
+            </div>
+            <div class="input">
+              <input class="input-decoration text-decoration" type="text" @bind="Model.Weight" placeholder="Peso"/>
+            </div>
+            <div class="input">
+              <input class="input-decoration text-decoration" type="text" placeholder="Sexo"/>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" placeholder="Sexo" id="checkAge" @bind="Model.isOld"/>
+              <label for="checkAge"><span>Eu tenho 65 anos ou mais</span></label>
+            </div>
+            <div class="button">
+              <button class="button-primary" >Calcular meu IMC</button>
+            </div>
+            <div class="button">
+              <button class="button-secundary">Entenda o cálculo</button>
+            </div>
+          </EditForm>
+        </div>
+      </div>
+
+@code
+{
+  
+  public class imcItem
+  {
+    [Required]
+    public double? Weight { get; set; }
+    [Required]
+    public double? Height { get; set; }
+    public double Imc { get; set; } 
+    public string? Title { get; set; }
+    public double Result { get; set; }
+    public string? Hour { get; set; }
+    public string? Message { get; set; }
+    public bool isOld { get; set; }
+  }
+
+  public imcItem Model { get; set; } = new();
+  
+  public static List<imcItem> Imcs = new List<imcItem>();
+  
+  void CalcImc()
+  {
+    var heightM = Model.Height / 100;
+    Model.Imc = (double)(Model.Weight / (heightM * heightM))!;
+    if (Model.Imc > 24)
+    {
+      Model.Title = "Sobrepeso \u26d4";
+      Model.Message = "Estamos quase lá! Faça alguns ajustes para ficar no peso ideal!";
+      Model.Hour = DateTime.Now.ToString("t");
+    }
+    if(Model.Imc < 24)
+    {
+      Model.Title = "Parabens \u2705";
+      Model.Message = "Parabéns, você está no seu peso ideal, continue mantendo este estilo!";
+      Model.Hour = DateTime.Now.ToString("t");
+    }
+    Imcs.Add(new imcItem{Result = Model.Imc, Title = Model.Title, Message = Model.Message, Hour = Model.Hour});
+      
+  }
+}

@@ -1,0 +1,100 @@
+﻿/* Body + DIV CONTAINER */
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Header */
+.header {
+    padding: 20px;
+}
+
+/* Input + input text Decorations */
+.input {
+    height: 50px;
+    border: none;
+    outline-width: thin;
+}
+
+.input-decoration{
+    border: #E8E8E8;
+    border-radius: 8px;
+    border-color: #E8E8E8;
+    padding: 8px 16px;
+    background-color: #F6F6F6;
+    outline-color: #a8a8a8;
+}
+
+.text-decoration{
+    color: #BDBDBD;
+    width: 343px;
+}
+
+/* CheckBox */
+.checkbox {
+    gap: 8px;
+    height: 70px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 35px;
+    padding-left: 15px;
+}
+
+.checkbox label{
+    text-align: left;
+    color: #666666;
+    font-size: smaller;
+}
+
+/* Buttons */
+.button {
+    height: 70px;
+    padding-bottom: 25px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.button-primary {
+    padding: 16px 32px;
+    border-radius: 100px;
+    border-style: none;
+    background-color: rgba(69, 254, 254, 1);
+    transition: 0.3s;
+    width: 350px;
+    font-size: small;
+    font-weight: bolder;
+}
+
+.button-primary:hover{
+    background-color: rgb(195, 255, 255);
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+
+.button-secundary {
+    padding: 16px 32px;
+    border-radius: 100px;
+    border-color: rgba(69, 254, 254, 1);
+    border-style: solid;
+    border-width: 4px;
+    background-color: rgba(255, 255, 255, 1);
+    transition: 0.3s;
+    width: 350px;
+    font-size: small;
+    font-weight: bolder;
+}
+
+.button-secundary:hover{
+    border-color:rgb(195, 255, 255);
+    cursor: pointer;
+}
+
+
+
+

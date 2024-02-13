@@ -1,0 +1,28 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+    <div class="container">
+      <div class="header">
+        <p>
+          <img src="icon-no-bg.png" alt="IMC Logo" />
+        </p>
+        <h1>Histórico</h1>
+      </div>
+      <input
+        class="input-decoration text-decoration"
+        type="text"
+        placeholder="Pesquisar..."
+      />
+      @foreach(var item in Home.Imcs){
+        <div class="card">
+          <div class="card-header">
+            <h3>@item.Title</h3>
+            <span>@item.Hour</span>
+          </div>
+          <p>@item.Message</p>
+        </div>
+      }
+    </div>
+
+

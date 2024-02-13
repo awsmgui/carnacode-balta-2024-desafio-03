@@ -9,6 +9,8 @@ O CarnaCode é um evento online e gratuito que acontece nos dias 10, 11, 12 e 13
 ## Sobre o Desafio
 Neste terceiro desafio, adicionamos suporte a PWA e publicamos a aplicação completa para calcular o IMC (Índice de Massa Muscular) que fizemos nos desafios anteriores. Aprendemos conceitos como Git, GitHub, CI/CD, DevOps e PWA.
 
+Precisei fazer o nivel facil, pois estou sem tempo e também sem energia em casa por conta de chuva.
+
 ### Tecnologias Utilizadas
 * ASP.NET
 * Razor
@@ -22,7 +24,7 @@ Neste terceiro desafio, adicionamos suporte a PWA e publicamos a aplicação com
 
 
 ### Ferramentas Utilizadas
-* << INFORMAR A IDE UTILIZADA >>
+* VS CODE
 
 # Recompensa
 <img src="https://baltaio.blob.core.windows.net/temp/carnacode-badge-desafio-03.png" alt="CarnaCode 2024 - Terceiro Desafio Completo" width="256" />
